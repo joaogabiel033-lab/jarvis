@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#02050a">
+  <meta name="description" content="Assistente virtual J.A.R.V.I.S. com reconhecimento de voz.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon-192.svg" type="image/svg+xml">
+  <title>J.A.R.V.I.S.</title>
+  <style>
+    body { margin: 0; min-height: 100vh; background: #02050a; color: #55dfff; font-family: Arial, sans-serif; display: grid; place-items: center; text-align: center; }
+    main { padding: 2rem; }
+    .loader { width: 64px; height: 64px; margin: 0 auto 1rem; border: 3px solid #00cfff; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="loader" aria-hidden="true"></div>
+    <p>Inicializando J.A.R.V.I.S...</p>
+  </main>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js").catch(console.error);
+    }
+    window.location.replace("./pen%20(22).html");
+  </script>
+</body>
+</html>
